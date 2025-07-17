@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mobile Top-Up</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 30px;
+            background-color: #f4f4f4;
+        }
+        form {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            max-width: 400px;
+            margin: auto;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+        }
+        label, select, input {
+            display: block;
+            width: 100%;
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+        button {
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            font-size: 16px;
+            cursor: pointer;
+            width: 100%;
+            border-radius: 5px;
+        }
+        .success-message {
+            display: none;
+            text-align: center;
+            color: green;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <form id="topupForm" onsubmit="return handleTopUp()">
+        <h2>Mobile Top-Up</h2>
+
+        <label for="phoneNumber">Phone Number</label>
+        <input type="text" id="phoneNumber" required placeholder="e.g. 010123456">
+
+        <label for="network">Network</label>
+        <select id="network" required>
+            <option value="">Select</option>
+            <option value="Metfone">Metfone</option>
+            <option value="Cellcard">Cellcard</option>
+            <option value="Smart">Smart</option>
+        </select>
+
+        <label for="amount">Amount ($)</label>
+        <input type="number" id="amount" required min="1" step="1" placeholder="e.g. 2">
+
+        <button type="submit" id="submitBtn">Top Up</button>
+        <div class="success-message" id="successMsg">Top-up successful</div>
+    </form>
+
+    <script>
+        function handleTopUp() {
+            // Simulate a short delay
+            setTimeout(() => {
+                document.getElementById("successMsg").style.display = "block";
+            }, 300);
+            return false; // Prevent actual form submission
+        }
+    </script>
+</body>
+</html>
